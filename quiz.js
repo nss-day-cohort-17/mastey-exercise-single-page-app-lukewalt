@@ -17,13 +17,13 @@ function displayCars(e) {
     //loops through the array of objects
     for (var i = 0; i < globalCars.cars.length; i++) {
         console.log(globalCars.cars[i].make);
-        parseDisplay += `<div>
+        parseDisplay += `<div class="col-sm-3 indvDsp">
                             <h3>${globalCars.cars[i].make} ${globalCars.cars[i].model}</h3>
                             <p>Year: ${globalCars.cars[i].year}</p>
                             <p>Price: ${globalCars.cars[i].price}</p>
                             <p>Desription ${globalCars.cars[i].description}</p>
                         </div>`
     }
-    //sets html values to corresponding parsed data by indexing them via counter 
+    //sets html values to corresponding parsed data by indexing them via counter
     wrapper.innerHTML = (parseDisplay);
 }

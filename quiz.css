@@ -1,0 +1,9 @@
+#wrapper {
+    margin: 5%;
+}
+
+.indvDsp {
+    margin: 2% 3%;
+    border: 1px solid lightgrey;
+    min-height: 250px;
+}

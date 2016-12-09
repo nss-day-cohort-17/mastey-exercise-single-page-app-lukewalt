@@ -8,13 +8,6 @@
             "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
         },
         {
-            "make": "Honda",
-            "model": "Accord",
-            "year": "1997",
-            "price": "7312",
-            "description": "While this is an older car, it remains comfortably functioning. It is a manual and the interior smells of coffee and faint menthol cigarette smoke."
-        },
-        {
             "make": "Toyota",
             "model": "Camery",
             "year": "2002",
@@ -40,14 +33,21 @@
             "model": "i8",
             "year": "2015",
             "price": "50999",
-            "description": "Lightly used: Three pistons combusting internally, a dash of electrons and lots of aluminum and carbon fiber are the i8’s main ingredients."
+            "description": "Three pistons combusting internally, a dash of electrons and lots of aluminum and carbon ."
         },
         {
             "make": "Nissan",
             "model": "Rogue",
             "year": "2006",
             "price": "8999",
-            "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+            "description": "Only 25000 miles on it. Leather seats, power everything."
+        },
+        {
+            "make": "Honda",
+            "model": "Accord",
+            "year": "1997",
+            "price": "7312",
+            "description": "The interior smells of coffee and faint menthol cigarette smoke."
         },
         {
             "make": "Tesla",
