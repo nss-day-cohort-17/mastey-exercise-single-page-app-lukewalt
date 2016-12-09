@@ -28,9 +28,14 @@ function displayCars(e) {
     wrapper.innerHTML = parseDisplay;
 
     var idCounter = document.getElementsByClassName("indvDsp");
+    var searchInput = document.getElementById("inputField");
+
     for (var i = 0; i < idCounter.length; i++) {
         idCounter[i].addEventListener("click", function(e) {
             e.currentTarget.style.background = "lightgrey";
+            e.currentTarget.style.border = "5px solid black";
+            searchInput.innerHTML = "";
+            searchInput.focus();
         })
     }
 
