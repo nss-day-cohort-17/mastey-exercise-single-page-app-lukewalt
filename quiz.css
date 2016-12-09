@@ -1,9 +1,10 @@
 #wrapper {
-    margin: 5%;
+    /*margin: 5%;*/
+    margin-top: 12%;
 }
 
 .indvDsp {
     margin: 2% 3%;
-    border: 1px solid lightgrey;
+    border: 1px solid black;
     min-height: 250px;
 }
