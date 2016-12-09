@@ -3,16 +3,19 @@ var globalCars;
 var wrapper = document.getElementById("wrapper");
 //request data from inventory json file
 var carRequest = new XMLHttpRequest();
-carRequest.addEventListener("load", displayCars);
+carRequest.addEventListener("load", loadInventory);
 carRequest.open("GET", "inventory.json");
 carRequest.send();
 
 
-var parseDisplay = "";
-function displayCars(e) {
+function loadInventory(e) {
     //parses data from request and stores it in global car variable
     globalCars = JSON.parse(e.target.responseText);
+    populatePage();
+}
 
+var parseDisplay = "";
+function populatePage() {
     //loops through the array of objects
     for (var i = 0; i < globalCars.cars.length; i++) {
         console.log(globalCars.cars[i].make);
@@ -38,10 +41,7 @@ function displayCars(e) {
             searchInput.focus();
         })
     }
-
 }
 
 
 //changes the background color of each item when clicked
-
-var displayBox = ("indvDsp");
