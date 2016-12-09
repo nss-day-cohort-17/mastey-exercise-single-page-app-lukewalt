@@ -1,3 +1,15 @@
+
+.navbar-left {
+    width: 100%;
+}
+#inputField {
+    min-width: 50%;
+}
+
+.container {
+    text-align: center;
+}
+
 #wrapper {
     /*margin: 5%;*/
     margin-top: 12%;

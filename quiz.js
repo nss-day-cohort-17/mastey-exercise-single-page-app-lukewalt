@@ -24,7 +24,7 @@ function populatePage() {
                             <h3>${globalCars.cars[i].make} ${globalCars.cars[i].model}</h3>
                             <p>Year: ${globalCars.cars[i].year}</p>
                             <p>Price: ${globalCars.cars[i].price}</p>
-                            <p>Desription ${globalCars.cars[i].description}</p>
+                            <p class="dptn">Desription: ${globalCars.cars[i].description}</p>
                         </div>`
     }
 
@@ -32,14 +32,20 @@ function populatePage() {
     wrapper.innerHTML = parseDisplay;
 
     var indvDsp = document.getElementsByClassName("indvDsp");
+    var dptn = document.getElementsByClassName("dptn");
+    console.log(dptn);
     var searchInput = document.getElementById("inputField");
 
     for (var i = 0; i < indvDsp.length; i++) {
+        console.log(indvDsp[i]);
         indvDsp[i].addEventListener("click", function(e) {
             e.currentTarget.style.background = "lightgrey";
             e.currentTarget.style.border = "5px solid black";
-            searchInput.value = "";
             searchInput.focus();
+            for (var j = 0; j < dptn.length; j++) {
+                searchInput.value = dptn[j].innerHTML;
+            }
+
         })
     }
 }
