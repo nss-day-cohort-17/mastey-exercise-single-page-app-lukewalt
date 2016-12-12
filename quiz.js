@@ -33,31 +33,40 @@ function populatePage() {
 
     //sets html values to corresponding parsed data by indexing them via counter
     wrapper.innerHTML = parseDisplay;
+    eventListeners();
+}
+
+function eventListeners(){
 
     var indvDsp = document.getElementsByClassName("indvDsp");
-    console.log(indvDsp);
     var dscr = document.getElementsByClassName("dscr");
     var searchInput = document.getElementById("inputField");
 
     for (var i = 0; i < indvDsp.length; i++) {
-        // console.log(indvDsp[i]);
+
         indvDsp[i].addEventListener("click", function(e) {
+            //changes style of target
             e.currentTarget.style.background = "lightgrey";
             e.currentTarget.style.border = "5px solid black";
+            //calls focus to input field
             searchInput.focus();
-            // console.log(dscr[2].innerHTML);
-
-            for (var j = 0; j < dscr.length; j++) {
-                if (e.currentTarget.id == [j]) {
-                    searchInput.value = dscr[j].innerHTML;
-                }
-            }
-
-
-
+            //calls description into input field
+            var currentEl = '';
+            currentEl = e.currentTarget.children[6];
+            searchInput.value = currentEl.innerText;
+            mirror(currentEl);
         })
     }
 }
 
+function mirror(arg) {
+    var searchInput = document.getElementById("inputField");
+
+    searchInput.addEventListener("keypress", function(){
+        // console.log(arg);
+        arg.innerText = searchInput.value;
+    });
+
+}
 
 //changes the background color of each item when clicked
