@@ -19,12 +19,15 @@ function loadInventory(e) {
 function populatePage() {
     //loops through the array of objects and compiles list of each car info
     for (var i = 0; i < globalCars.cars.length; i++) {
-        console.log(globalCars.cars[i].make);
+        // console.log(globalCars.cars[i].make);
         parseDisplay += `<div class="col-md-3 indvDsp" id="${[i]}">
                             <h3>${globalCars.cars[i].make} ${globalCars.cars[i].model}</h3>
-                            <p>Year: ${globalCars.cars[i].year}</p>
-                            <p>Price: ${globalCars.cars[i].price}</p>
-                            <p class="dptn">Desription: ${globalCars.cars[i].description}</p>
+                            <h4>Year</h4>
+                            <p>${globalCars.cars[i].year}</p>
+                            <h4>Price</h4>
+                            <p> ${globalCars.cars[i].price}</p>
+                            <h4>Description</h4>
+                            <p class="dscr"> ${globalCars.cars[i].description}</p>
                         </div>`
     }
 
@@ -32,19 +35,25 @@ function populatePage() {
     wrapper.innerHTML = parseDisplay;
 
     var indvDsp = document.getElementsByClassName("indvDsp");
-    var dptn = document.getElementsByClassName("dptn");
-    console.log(dptn);
+    console.log(indvDsp);
+    var dscr = document.getElementsByClassName("dscr");
     var searchInput = document.getElementById("inputField");
 
     for (var i = 0; i < indvDsp.length; i++) {
-        console.log(indvDsp[i]);
+        // console.log(indvDsp[i]);
         indvDsp[i].addEventListener("click", function(e) {
             e.currentTarget.style.background = "lightgrey";
             e.currentTarget.style.border = "5px solid black";
             searchInput.focus();
-            for (var j = 0; j < dptn.length; j++) {
-                searchInput.value = dptn[j].innerHTML;
+            // console.log(dscr[2].innerHTML);
+
+            for (var j = 0; j < dscr.length; j++) {
+                if (e.currentTarget.id == [j]) {
+                    searchInput.value = dscr[j].innerHTML;
+                }
             }
+
+
 
         })
     }
