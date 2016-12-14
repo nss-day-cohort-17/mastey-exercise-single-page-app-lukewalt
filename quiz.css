@@ -19,16 +19,21 @@
     margin: 2% 3%;
     border: 1px solid black;
     min-height: 300px;
+    border-radius: 5px;
+
 }
 
 .selected {
-    background-color: lightgrey;
+    background-color: tomato;
     border: 5px solid black;
+    color: white;
 }
+
 
 .dscr {
     min-height: 100px;
     border: 1px dotted black;
+    border-radius: 5px;
     padding: 9px;
     word-wrap: break-word;
 }
