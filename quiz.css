@@ -1,3 +1,9 @@
+.navbar {
+    font-family: 'Sanchez', serif;
+    border-color: grey;
+    min-height: 75px;
+    padding: 1em;
+}
 
 .navbar-left {
     width: 100%;
@@ -23,10 +29,14 @@
 
 }
 
-.selected {
-    background-color: tomato;
+.divSelected {
     border: 5px solid black;
     color: white;
+}
+
+.colorSelect {
+    background-color: tomato;
+
 }
 
 
@@ -36,4 +46,16 @@
     border-radius: 5px;
     padding: 9px;
     word-wrap: break-word;
+}
+
+h3 {
+    font-family: 'Bungee', cursive;
+}
+h4 {
+    font-family: 'Sanchez', serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Sanchez', serif;
 }

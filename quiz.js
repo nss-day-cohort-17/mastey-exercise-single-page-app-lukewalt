@@ -10,7 +10,7 @@ var wrapper = document.getElementById("wrapper");
 var parseDisplay = "";
 var indvDsp = document.getElementsByClassName("indvDsp");
 var dscr = document.getElementsByClassName("dscr");
-
+var curDescription;
 
 
 //request data from inventory json file
@@ -27,6 +27,8 @@ function loadInventory(e) {
     globalCars = JSON.parse(e.target.responseText);
     populatePage();
 }
+
+
 //You should add a function `populatePage` that
 //renders the inventory to the page
 function populatePage() {
@@ -55,52 +57,61 @@ function populatePage() {
 // Name the function `activateEvents`.
 function activateEvents(){
     wrapper.addEventListener("click", style);
-
 }
+
+
 // You should add a function that changes the thickness of the border of a car element,
 // and changes its background color. The function must accept two arguments:
 //     A car DOM element that was clicked on.
 //     A color name of your choice (see behavior requirement 5 above).
-
-var x;
-
 function style(e, color) {
-    //changes style of target
 
-    e.target.closest(".indvDsp").className += " selected ";
+    //stores className to add
+    color = " colorSelect ";
+    //changes class of target which adds styling
+    e.target.closest(".indvDsp").className += " divSelected " + color;
     //calls focus to input field
     searchInput.focus();
     //calls description into input field
     searchInput.value = e.target.closest(".indvDsp").children[6].innerText;
-    x = e.target.closest(".indvDsp").children[6];
-    console.log(x);
-    inputEdit();//e.target.closest(".indvDsp").children[6]
+
+    //stores current description in global varible
+    curDescription = e.target.closest(".indvDsp").children[6];
+    //calls function that allows the text to be edited
+    inputEdit();
 }
 
-function inputEdit() { //description
+
+//event listener calls mirror which sets description equal to current user input per keystroke
+function inputEdit() {
     searchInput.addEventListener("keyup", mirror);
 }
 
+
+//listens for enter key and leaves edit mode upon press
 function mirror(e) {
-    x.innerText = searchInput.value;
+    //sets to user input
+    curDescription.innerText = searchInput.value;
     if (e.key === 'Enter') {
+        //removes event listeners
         removal();
     }
-        // console.log(x.innerText = searchInput.value);
 }
+
 
 // You should add a function that resets the border thickness and background color
 // for each car element back to the original values.
 submitButton.addEventListener("click", removal);
 function removal() {
+    //goes through each div to reset class name
     for (var i = 0; i < indvDsp.length; i++) {
+        //sets the class back to original state
         indvDsp[i].className = " col-md-3 indvDsp "
     }
+    //sets input field back to empty state
     searchInput.value = "";
-
+    //switches out of edit mode
     searchInput.removeEventListener("keyup", mirror);
-
-
 }
 
 
@@ -119,5 +130,13 @@ function removal() {
 
 
 
-
-// sfasdfasdf
+/*
+//
+//    ##   #    #  ####  #    #  ####  #####
+//   #  #  ##   # #    # #    # #    # #    #
+//  #    # # #  # #      ###### #    # #    #
+//  ###### #  # # #      #    # #    # #####
+//  #    # #   ## #    # #    # #    # #   #
+//  #    # #    #  ####  #    #  ####  #    #
+//
+*/
