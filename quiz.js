@@ -72,9 +72,8 @@ function style(e, color) {
     e.target.closest(".indvDsp").className += " divSelected " + color;
     //calls focus to input field
     searchInput.focus();
-    //calls description into input field
-    searchInput.value = e.target.closest(".indvDsp").children[6].innerText;
-
+    //starta an empty text field instead of populating the text field with the current description
+    searchInput.value = " ";
     //stores current description in global varible
     curDescription = e.target.closest(".indvDsp").children[6];
     //calls function that allows the text to be edited
