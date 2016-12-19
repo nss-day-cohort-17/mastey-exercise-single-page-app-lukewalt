@@ -56,7 +56,10 @@ function populatePage() {
 // You should add a function that only creates all of the eventHandlers that you need for the application.
 // Name the function `activateEvents`.
 function activateEvents(){
-    wrapper.addEventListener("click", style);
+    //anonamous function calls style function with target and color arguments
+    wrapper.addEventListener("click", function(e){
+        style(e, " tomato ")
+    });
 }
 
 
@@ -66,8 +69,6 @@ function activateEvents(){
 //     A color name of your choice (see behavior requirement 5 above).
 function style(e, color) {
 
-    //stores className to add
-    color = " colorSelect ";
     //changes class of target which adds styling
     e.target.closest(".indvDsp").className += " divSelected " + color;
     //calls focus to input field
