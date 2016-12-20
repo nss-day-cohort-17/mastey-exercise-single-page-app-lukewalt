@@ -56,7 +56,7 @@ function populatePage() {
 // You should add a function that only creates all of the eventHandlers that you need for the application.
 // Name the function `activateEvents`.
 function activateEvents(){
-    //anonamous function calls style function with target and color arguments
+    //anonymous function calls style function with target and color arguments
     wrapper.addEventListener("click", function(e){
         style(e, " tomato ")
     });
